@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class main {
+public class Main {
     public static void main(String[] args) {
         // 1. Open the keyboard pipeline
         Scanner input = new Scanner(System.in);
