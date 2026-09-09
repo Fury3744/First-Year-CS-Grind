@@ -1,24 +1,30 @@
+import java.util.Scanner;
 public class main {
-    public static void main(String[] args){
-        // 1. Primitive Numbers
-        int age = 18;                    // Integer (whole numbers)
-        double cgpaTarget = 9.5;         // Decimal / Floating-point number
+    public static void main(String[] args) {
+        // 1. Open the keyboard pipeline
+        Scanner input = new Scanner(System.in);
 
-        // 2. Character & Boolean
-        char initial = 'A';              // Single character (uses single quotes)
-        boolean isGrinding = true;       // true or false
+        // 2. Take user input
+        System.out.println("Enter your projected ISE score(out of 20): ");
+        int iseScore = input.nextInt();
 
-        // 3. Text (Reference Type)
-        String college ="SGGS";          // Text sequence (uses double quotes)
+        System.out.println("Enter your projected MSE score (out of 30: ");
+        int mseScore = input.nextInt();
 
-        // 4. Console Output & String Concatenation
-        System.out.println("=== Day 01: Java Setup & Data Types ===");
-        System.out.println("Target: " +cgpaTarget + " CGPA at " + college);
-        System.out.println("Status: Grinding = " + isGrinding);
+        // 3. Calculate and display
+        int totalSoFar = iseScore + mseScore;
+        System.out.println("\n--- Mid-Semister Report ---");
+        System.out.println("Current Total: " + totalSoFar + " / 50");
 
-        // 5. Basic Arithmetic
-        int semesterDays = 120;
-        int remainingDays = semesterDays - 10;
-        System.out.println("Days remaining in sprint: " + remainingDays);
+        // 4. Control Flow (Decision Making)
+        if (totalSoFar >= 45) {
+            System.out.println("Status: Elite. You are prefectly positioned for a 9.5+ CGPA.");
+        } else if (totalSoFar >= 35) {
+            System.out.println("Status: Average. You will need a massive ESE to secure a top grade.");
+        } else {
+            System.out.println("Status: Danger zone. The curve will be brutal.");
+        }
+        // 5. Close the pipeline
+        input.close();
     }
 }
